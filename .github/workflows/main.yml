@@ -1,8 +1,6 @@
 name: Deploy to the test enviroment
 
-on: 
-  push:
-    branches: [ main ]
+on: workflow_dispatch
 
 jobs:
   build:
@@ -26,7 +24,7 @@ jobs:
       - name: Build Docker image
         uses: docker/build-push-action@v4
         with:
-          context: ../../
+          context: .
           dockerfile: Dockerfile.admin
           push: true
           tags: latest
