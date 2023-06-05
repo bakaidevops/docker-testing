@@ -25,6 +25,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          dockerfile: Dockerfile.admin
+          dockerfile: {context}/Dockerfile.admin
           push: true
           tags: latest
